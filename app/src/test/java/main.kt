@@ -18,7 +18,7 @@ fun main() {
 
 
         //Saca
-        fun saca(valor: Double) {
+        fun saca(valor: Double) {~/.gitconfig
             if (saldo >= valor) {
                 println("Saque efetuado com sucesso!")
                 this.saldo -= valor
