@@ -3,11 +3,11 @@ class Conta(val titular: String, val numeroConta: Int) {
         private set
 
     val contaGiovanni = Conta("Giovanni", 15)
-    contaGiovanni.deposita(200.0)
+
     val contaAna = Conta("Ana", 10)
-    contaAna.deposita(50.00)
+
     val contaPatricia = Conta("Patricia", 5)
-    contaPatricia.deposita (500.0)
+
 
 
     //Deposita

@@ -26,6 +26,7 @@ fun main() {
         "Guilherme",
         "222.222.222-22",
         15.000,
+        321.0,
         321
     )
     if(gui.autentica(321)){
