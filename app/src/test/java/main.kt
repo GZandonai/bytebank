@@ -5,7 +5,7 @@ fun main() {
 
     val contaCorrente = ContaCorrente(
         titular = "Giovanni",
-        numeroConta = = 4537,
+        numeroConta = 4537
     )
 
     val contaPoupanca = ContaPoupanca(
@@ -23,8 +23,8 @@ fun main() {
     contaPoupanca.saca(100.0)
     contaCorrente.saca(100.0)
 
-    println("saldo conta corrente {$contaCorrente}")
-    println("saldo conta poupaça {$contaPoupanca}")
+    println("saldo conta corrente ${contaCorrente.saldo}")
+    println("saldo conta poupaça ${contaPoupanca.saldo}")
 
 
 }

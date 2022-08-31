@@ -1,12 +1,6 @@
 open class Conta(val titular: String, val numeroConta: Int) {
     var saldo = 0.0
-        private set
-
-    val contaGiovanni = Conta("Giovanni", 15)
-
-    val contaAna = Conta("Ana", 10)
-
-    val contaPatricia = Conta("Patricia", 5)
+    private set
 
 
 
@@ -14,6 +8,7 @@ open class Conta(val titular: String, val numeroConta: Int) {
     open fun deposita(valor: Double) {
         if (valor > 0) {
             this.saldo += valor
+            println("Deposito realizado")
         }
     }
 
