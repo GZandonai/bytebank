@@ -3,45 +3,31 @@ fun main() {
     println(" ")
 
 
-    val paulo= Funcionario(
-        "Paulo",
-        "999.999.999-00",
-        5000.0
+    val contaCorrente = ContaCorrente(
+        titular = "Giovanni",
+        numeroConta = = 4537,
     )
 
-    val fran = Gerente(
-        "Franciele",
-        "111.111.111-11",
-        10.000,
-        123
+    val contaPoupanca = ContaPoupanca(
+        titular = "Ana",
+        numeroConta = 2715,
     )
 
-    if(fran.autentica(123)){
-        println("Login efetuado com sucesso!")
-    } else {
-        println("Senha inválida, não foi possível fazer login.")
-    }
 
-    val gui = Diretor(
-        "Guilherme",
-        "222.222.222-22",
-        15.000,
-        321.0,
-        321
-    )
-    if(gui.autentica(321)){
-        println("Login efetuado com sucesso!")
-    } else {
-        println("Senha inválida, não foi possível fazer login.")
-    }
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    val roger = Analista(
-        "Roger",
-        "555.555.555-55",
-        2.500
-    )
+    println("saldo conta corrente {$contaCorrente}")
+    println("saldo conta poupaça {$contaPoupanca}")
 
-    }
+    contaPoupanca.saca(100.0)
+    contaCorrente.saca(100.0)
+
+    println("saldo conta corrente {$contaCorrente}")
+    println("saldo conta poupaça {$contaPoupanca}")
+
+
+}
 
 
 
