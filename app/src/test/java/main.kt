@@ -35,7 +35,14 @@ fun main() {
         println("Senha inválida, não foi possível fazer login.")
     }
 
+    val roger = Analista(
+        "Roger",
+        "555.555.555-55",
+        2.500
+    )
+
     }
+
 
 
 
