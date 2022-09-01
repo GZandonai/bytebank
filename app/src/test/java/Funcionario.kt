@@ -4,7 +4,8 @@ open class Funcionario(
     val salario: Double,
 
     ) {
-    open fun bonificacao(): Double {
+    abstract val bonificacao: Double
+    get (){
         return salario * 0.1
     }
 

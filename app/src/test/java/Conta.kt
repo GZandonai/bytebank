@@ -1,4 +1,4 @@
-open class Conta(val titular: String, val numeroConta: Int) {
+abstract class Conta(val titular: String, val numeroConta: Int) {
     var saldo = 0.0
     private set
 
