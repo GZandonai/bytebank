@@ -2,7 +2,7 @@ class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int,
+    private val senha: Int,
 ) : Funcionario(
     nome = nome,
     cpf = cpf,
@@ -15,8 +15,9 @@ class Gerente(
         return false
     }
 
-    override fun bonificacao(): Double {
-        return super.bonificacao() + salario
+    override val bonificacao: Double
+    get (){
+        return salario + 0.8
     }
 }
 

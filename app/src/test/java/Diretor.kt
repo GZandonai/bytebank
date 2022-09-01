@@ -3,7 +3,7 @@ class Diretor(
     cpf: String,
     salario: Double,
     val plr: Double,
-    val senha: Int,
+    private val senha: Int,
 ) : Funcionario(
     nome = nome,
     cpf = cpf,
@@ -16,8 +16,10 @@ class Diretor(
         return false
     }
 
-    override fun bonificacao(): Double {
-        return super.bonificacao() + salario + plr
+    override val bonificacao: Double
+    get ()
+    {
+        return  salario + plr +0.5
     }
 
 }
