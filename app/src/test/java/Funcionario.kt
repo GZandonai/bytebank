@@ -4,14 +4,14 @@ abstract class Funcionario(
     val salario: Double,
 
     ) {
+
     abstract val bonificacao: Double
-<<<<<<< HEAD
 
-=======
-    get (){
-        return salario * 0.1
+
+    open fun autentica(senha: Int): Boolean {
+        if (senha == senha ) {
+            return true
+        }
+        return false
     }
->>>>>>> 94267aa6d7846c560aa1c4f1cc6962280dd09394
-
-
 }
