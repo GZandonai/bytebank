@@ -8,10 +8,4 @@ abstract class Funcionario(
     abstract val bonificacao: Double
 
 
-    open fun autentica(senha: Int): Boolean {
-        if (senha == senha ) {
-            return true
-        }
-        return false
-    }
 }

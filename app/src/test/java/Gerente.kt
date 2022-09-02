@@ -15,5 +15,7 @@ class Gerente(
     get (){
         return salario + 0.8
     }
+
+
 }
 
