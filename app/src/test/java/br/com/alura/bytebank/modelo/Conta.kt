@@ -1,25 +1,35 @@
 package br.com.alura.bytebank.modelo
-abstract class Conta(
+
+open class Conta(
     val titular: String,
     val numeroConta: Int,
 ) {
-abstract class Conta(val titular: String, val numeroConta: Int) {
 
-    var saldo = 0.0
-    protected set
+    private var saldo: Double = 0.0
+    fun getSaldo() = saldo
 
 
     //Deposita
-    abstract fun deposita(valor: Double)
-
+    fun deposita(valor: Double) {
+        if (valor > 0.0) {
+            println("Deposito feito com sucesso!")
+        } else {
+            println("Não é possivel depositar esse valor")
+        }
+    }
 
     //Saca
-    abstract fun saca(valor: Double)
-
+    fun saca(valor: Double) {
+        val valorComTaxa = valor + 0.1
+        if (this.saldo >= valorComTaxa) {
+            this.saldo -= valorComTaxa
+        }
+    }
 
     //Transfere
-    abstract fun transfere(valor: Double, destino: Conta): Boolean
+    fun transfere(valor: Double, destino: Conta) {
+
+    }
+}
 
 
-}
-}
