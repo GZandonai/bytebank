@@ -1,3 +1,5 @@
+package br.com.alura.bytebank.modelo
+
 class CalculadoraBonificacao {
 
     var total: Double = 0.0
@@ -10,10 +12,10 @@ class CalculadoraBonificacao {
 
 
 
-//    fun registra(gerente: Gerente){
+//    fun registra(gerente: teste.Gerente){
 //        this.total += gerente.bonificacao()
 //    }
-//    fun registra(diretor: Diretor){
+//    fun registra(diretor: teste.Diretor){
 //        this.total += diretor.bonificacao()
 //    }
 

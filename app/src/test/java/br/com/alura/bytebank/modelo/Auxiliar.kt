@@ -1,8 +1,10 @@
+package br.com.alura.bytebank.modelo
+
 class Auxiliar(
     nome: String,
     cpf: String,
     salario: Double,
-):Funcionario(
+): Funcionario(
     nome = nome,
     cpf = cpf,
     salario = salario

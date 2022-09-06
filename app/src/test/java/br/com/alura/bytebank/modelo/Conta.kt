@@ -1,4 +1,4 @@
-
+package br.com.alura.bytebank.modelo
 abstract class Conta(
     val titular: String,
     val numeroConta: Int,

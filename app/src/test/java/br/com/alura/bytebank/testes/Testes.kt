@@ -1,3 +1,5 @@
+package br.com.alura.bytebank.testes
+
 class testes {
 }
 
@@ -38,7 +40,7 @@ class testes {
 
 
 // TestaCondicoes
-//fun testaCondicoes(saldo: Double) {
+//fun teste.testaCondicoes(saldo: Double) {
 //
 //    when {
 //        saldo > 0.0 -> println("O saldo da sua conta é positivo!")
