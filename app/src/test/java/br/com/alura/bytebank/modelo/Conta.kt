@@ -1,9 +1,10 @@
 package br.com.alura.bytebank.modelo
 
 open class Conta(
-    val titular: String,
+    val titular: Cliente,
     val numeroConta: Int,
-) {
+
+    ) {
 
     private var saldo: Double = 0.0
     fun getSaldo() = saldo
