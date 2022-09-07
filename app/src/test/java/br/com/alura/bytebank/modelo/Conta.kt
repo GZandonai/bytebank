@@ -1,13 +1,25 @@
 package br.com.alura.bytebank.modelo
 
+
 open class Conta(
     val titular: Cliente,
     val numeroConta: Int,
 
     ) {
+    companion object  {
+
+        var total = 0
+            private set
+    }
 
     private var saldo: Double = 0.0
     fun getSaldo() = saldo
+
+
+    init {
+        println("Criando conta")
+        total++
+    }
 
 
     //Deposita
@@ -34,3 +46,18 @@ open class Conta(
 }
 
 
+class ContaCorrente(
+    titular: Cliente,
+    numeroConta: Int,
+) : Conta(
+    titular = titular,
+    numeroConta = numeroConta,
+)
+
+class ContaPoupanca(
+    titular: Cliente,
+    numeroConta: Int,
+) : Conta(
+    titular = titular,
+    numeroConta = numeroConta,
+)
