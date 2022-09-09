@@ -8,22 +8,15 @@ fun main() {
     println(" ")
 
 
-    println(Any())
-    println(1)
-    println(1.0)
-    println(true)
-    println("oi")
+    val endereco = Endereco(logradouro = "Rua Botafogo", cep = "000.000")
+    val enderecoNovo = Endereco(bairro = "Menino Deus", cep = "000.000")
 
-    val endereco = Endereco(logradouro = "")
+    println(endereco.equals(enderecoNovo))
+    println(endereco.hashCode())
+    println(enderecoNovo.hashCode())
+
+    println(endereco.equals(enderecoNovo))
 
 
-    imprime(Unit)
-    imprime(1)
-    imprime(1.0)
-    imprime(endereco)
-}
-
-fun imprime(valor: Any) : Unit {
-    println(valor)
 
 }
