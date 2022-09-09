@@ -1,6 +1,6 @@
 package br.com.alura.bytebank.modelo
 
-
+import br.com.alura.bytebank.modelo.br.com.alura.bytebank.modelo.Endereco
 
 
 fun main() {
@@ -8,19 +8,22 @@ fun main() {
     println(" ")
 
 
-    val giovanni = Cliente(nome = "Giovanni", cpf = "888", senha = 4537)
+    println(Any())
+    println(1)
+    println(1.0)
+    println(true)
+    println("oi")
 
-    val contaPoupanca = ContaPoupanca(titular = giovanni, numeroConta = 15)
-
-    val ana = object {
-        val nome: String = "Ana"
-        val cpf: String = "777"
-        val senha: Int = 123
-        fun autentica(senha: Int) = this.senha == senha
-    }
+    val endereco = Endereco(logradouro = "")
 
 
-    println("nome do cliente ${ana.nome}")
+    imprime(Unit)
+    imprime(1)
+    imprime(1.0)
+    imprime(endereco)
+}
 
-    println("total de contas: ${Conta.total}")
+fun imprime(valor: Any) : Unit {
+    println(valor)
+
 }
