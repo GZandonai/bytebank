@@ -1,20 +1,20 @@
 package br.com.alura.bytebank.modelo
 
+import br.com.alura.bytebank.br.com.alura.bytebank.exception.FalhaAutenticacaoException
+import br.com.alura.bytebank.br.com.alura.bytebank.exception.SaldoInsuficienteException
 
-open class Conta(
-    val titular: Cliente,
-    val numeroConta: Int,
 
-    ) {
-    companion object  {
-
+abstract class Conta(
+    var titular: Cliente,
+    val numero: Int
+):Autenticavel
+ {
+    var saldo = 0.0
+        protected set
+    companion object {
         var total = 0
             private set
     }
-
-    private var saldo: Double = 0.0
-    fun getSaldo() = saldo
-
 
     init {
         println("Criando conta")
@@ -22,42 +22,58 @@ open class Conta(
     }
 
 
-    //Deposita
+     override fun autentica(senha: Int): Boolean {
+        return titular.autentica(senha)
+         }
+
     fun deposita(valor: Double) {
-        if (valor > 0.0) {
-            println("Deposito feito com sucesso!")
-        } else {
-            println("Não é possivel depositar esse valor")
+        if (valor > 0) {
+            this.saldo += valor
         }
     }
 
-    //Saca
-    fun saca(valor: Double) {
-        val valorComTaxa = valor + 0.1
-        if (this.saldo >= valorComTaxa) {
-            this.saldo -= valorComTaxa
+    abstract fun saca(valor: Double)
+
+    fun transfere(valor: Double, destino: Conta, senha: Int){
+       if (saldo < valor ){
+        throw SaldoInsuficienteException(
+            mensagem = "O saldo eh insuficiento, saldo atual: $saldo, valor a ser subtraido $valor" )
+       }
+        if(!autentica(senha)){
+            throw FalhaAutenticacaoException()
         }
-    }
 
-    //Transfere
-    fun transfere(valor: Double, destino: Conta) {
 
-    }
+        saldo -= valor
+        destino.deposita((valor))
 }
-
 
 class ContaCorrente(
     titular: Cliente,
-    numeroConta: Int,
+    numero: Int
 ) : Conta(
     titular = titular,
-    numeroConta = numeroConta,
-)
+    numero = numero
+) {
+    override fun saca(valor: Double) {
+        val valorComTaxa = valor + 0.1
+        if(this.saldo >= valorComTaxa){
+            this.saldo -= valorComTaxa
+        }
+    }
+}
 
 class ContaPoupanca(
     titular: Cliente,
-    numeroConta: Int,
+    numero: Int
 ) : Conta(
     titular = titular,
-    numeroConta = numeroConta,
-)
+    numero = numero
+) {
+    override fun saca(valor: Double) {
+        if(this.saldo >= valor){
+            this.saldo -= valor
+        }
+    }
+}
+}

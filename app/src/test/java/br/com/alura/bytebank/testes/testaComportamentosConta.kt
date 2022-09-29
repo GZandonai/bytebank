@@ -1,8 +1,10 @@
+package br.com.alura.bytebank.br.com.alura.bytebank.testes
+
 import br.com.alura.bytebank.modelo.Cliente
 import br.com.alura.bytebank.modelo.Conta
 import br.com.alura.bytebank.modelo.br.com.alura.bytebank.modelo.Endereco
 
-fun testaContasDiferentes() {
+fun testaComportamentosConta() {
     val contaCorrente = Conta.ContaCorrente(
         titular = Cliente(
             nome = "Alex",
@@ -50,7 +52,3 @@ fun testaContasDiferentes() {
     println("saldo poupança após transferir para corrente: ${contaPoupanca.saldo}")
     println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 }
-
-
-
-
